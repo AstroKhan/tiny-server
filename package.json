@@ -1,0 +1,13 @@
+{
+  "name": "tiny-server",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "micro": "^9.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.19"
+  },
+  "author": "Astro",
+  "license": "ISC"
+}

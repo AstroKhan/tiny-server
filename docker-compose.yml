@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  webhook:
+    build: .
+    command: npx nodemon src/index.js --watch src
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
+      - node_modules_volume:/app/node_modules
+
+  ngrok:
+    image: wernight/ngrok
+    command: ngrok http -authtoken=2DSFrsJiwjcp9es3NkEFzDnuyum_6JQS9vo9zgvwfxt9wZXtS --region=eu webhook:3000
+    ports:
+      - 4040:4040
+
+  volumes:
+  node_modules_volume:
